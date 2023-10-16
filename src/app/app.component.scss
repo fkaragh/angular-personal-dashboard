@@ -1,0 +1,37 @@
+.app-wrapper{
+    display: flex;
+    flex-direction: column;
+
+    height: 100%;
+    
+    background-color: #e1e2ed;
+}
+
+.top-section{
+    background-color: aquamarine;
+    text-align: center;
+
+    padding: 100px 0;
+
+    h1{
+        font-size: 120px;
+        font-weight: bold;
+        color: #f5f5f5;
+        text-shadow: 0px 1px 7px rgba($color: #000000, $alpha: 0.12);
+    }
+
+    h2{
+        font-size: 28px;
+        color: white;
+        text-shadow: 0px 1px 4px rgba($color: #000000, $alpha: 0.1);
+    }
+}
+
+.content-section{
+    background-color: rgb(207, 186, 226);
+    flex-grow: 1;
+}
+
+.bottom-section{
+    background-color: coral;
+}
