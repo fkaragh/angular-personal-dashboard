@@ -26,6 +26,16 @@
     i{
         color: #222;
     }
+
+    transition: all 0.2s ease-out;
+}
+
+.tab.selected .tab-tile{
+    transform: translateY(-35%);
+
+    transition-duration: 0.4s;
+    transition-timing-function: cubic-bezier(0, 0, 0, 2);
+   
 }
 
 //STYLE BACKGROUND FOR TAB TILE
@@ -46,7 +56,7 @@
     
     opacity: 0.9;
 
-    transition: all 0.2s;
+    transition: all 0.1s;
 }
 
 .bookmarks-tab .tab-tile::before{
@@ -64,12 +74,54 @@
 .tab-tile:hover::before{
     opacity: 1;
     transform: scale(1.1);
+    transition: all 0.35s;
 }
 
 .tab.selected .tab-tile::before{
     border-radius: 50px;
     transform: scale(1.1);    
     opacity: 1;
+
+    box-shadow: 0px 7px 17px rgba($color: black, $alpha: 0.12);
+
+    transition: all 0.4s;
+    transition-delay: 0.15s;
 }
 
 //END OF STYLE BACKGROUND FOR TAB TILE
+
+
+
+
+
+// STYLES FOR THE UNDERLINE EFFECT
+
+.tab::after{
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    right: 0;
+
+    height: 3px;
+    width: 50%;
+
+    margin: auto;
+
+    background-color: rgba($color: white, $alpha: 0.85);
+    
+    transition: all 0.2s;
+
+    //hide by default
+    opacity: 0;
+    transform: scaleX(0);
+    
+}
+
+.tab.selected::after{
+    opacity: 1;
+    transform: scaleX(100%);
+    transition-delay: 0.2s;
+}
+
+.tab.selected {outline: none;}
