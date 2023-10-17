@@ -1,0 +1,75 @@
+.tabs {
+    display: flex;
+    gap: 14px;
+    background-color: rgba($color: white, $alpha: 0.25);
+    border-radius: 12px;
+    padding: 10px;
+    margin: 12px;
+    margin-top: 50px;
+   
+}
+
+.tab{
+    position: relative; //its for the before pseudo element we use on icon tile background  
+    z-index: 1;
+
+    text-decoration: none;
+}
+
+.tab-tile{
+    display: flex; //the button was not square before we put the command flex because it takes the icons line height to account like it is a text.
+
+    padding: 18px;
+
+    cursor: pointer;
+
+    i{
+        color: #222;
+    }
+}
+
+//STYLE BACKGROUND FOR TAB TILE
+
+.tab-tile::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    z-index: -1;
+
+    height: 100%;
+    width: 100%;
+
+    
+    border-radius: 10px;
+    
+    opacity: 0.9;
+
+    transition: all 0.2s;
+}
+
+.bookmarks-tab .tab-tile::before{
+    background: linear-gradient(45deg, #f8b5a5, #e2d2fd);
+}
+
+.todos-tab .tab-tile::before{
+    background: linear-gradient(45deg, #a2ffff, #ffbdde);
+}
+
+.notes-tab .tab-tile::before{
+    background: linear-gradient(45deg, #d2cdff, #5fffbc);
+}
+
+.tab-tile:hover::before{
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+.tab.selected .tab-tile::before{
+    border-radius: 50px;
+    transform: scale(1.1);    
+    opacity: 1;
+}
+
+//END OF STYLE BACKGROUND FOR TAB TILE
