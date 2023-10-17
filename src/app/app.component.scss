@@ -37,6 +37,7 @@
 .content-section{
     //background-color: rgb(207, 186, 226);
     flex-grow: 1;
+    min-height: 0;// for the bookmarks
 }
 
 .bottom-section{
